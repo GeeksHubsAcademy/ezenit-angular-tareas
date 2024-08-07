@@ -12,7 +12,11 @@
   </p>
 
   <ng-template #elseBlock>
-    <p>#elseBlock</p>
+    <p [background]="color">
+
+     <app-counter [startAt]="secondsNow"></app-counter>
+
+    </p>
   </ng-template>
 
   @if(secondsNow % 3 === 0) {
