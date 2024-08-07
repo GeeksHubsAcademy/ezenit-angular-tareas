@@ -1,0 +1,18 @@
+<section class="add-todo">
+
+  <form (ngSubmit)="handleSubmitAddTodo()">
+    <input name="todoText"
+      type="text"
+      placeholder="add new todo here"
+      [(ngModel)]="addTodoText">
+    <button type="submit">Add Todo</button>
+  </form>
+
+  <!-- <span>{{addTodoText}}</span> -->
+</section>
+<section class="todos-list">
+  <div *ngFor="let todo of todosList"
+    class="todo-item">
+    {{todo.text}} completed: {{todo.completed}}
+  </div>
+</section>
