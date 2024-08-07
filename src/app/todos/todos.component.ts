@@ -45,4 +45,9 @@ export class TodosComponent {
   handleComplete(todo: Todo) {
     todo.completed = !todo.completed;
   }
+  handleDelete(id: number) {
+    // this.todosList = this.todosList.filter(todo => todo.id !== id);
+    const index = this.todosList.findIndex(todo => todo.id === id);
+    this.todosList.splice(index, 1);
+  }
 }
