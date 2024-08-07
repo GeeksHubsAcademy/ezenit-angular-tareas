@@ -12,7 +12,9 @@
 </section>
 <section class="todos-list">
   <div *ngFor="let todo of todosList"
-    class="todo-item">
-    {{todo.text}} completed: {{todo.completed}}
+    class="todo-item  {{todo.completed ? 'completed' : 'uncompleted'}}">
+    <span class="todo-text">{{todo.text}}</span>
+    <input type="checkbox"  (change)="handleComplete(todo)"  [value]="todo.completed">
+    <!-- <button (click)="handleDelete(todo.id)">Delete</button> -->
   </div>
 </section>

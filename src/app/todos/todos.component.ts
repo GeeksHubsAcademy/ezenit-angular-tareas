@@ -42,4 +42,7 @@ export class TodosComponent {
     });
     this.addTodoText = '';
   }
+  handleComplete(todo: Todo) {
+    todo.completed = !todo.completed;
+  }
 }
