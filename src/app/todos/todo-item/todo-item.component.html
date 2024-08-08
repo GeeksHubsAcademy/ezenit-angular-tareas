@@ -1,5 +1,5 @@
 <div  class="todo-item  {{todo?.completed ? 'completed' : 'uncompleted'}}">
-  <span class="todo-text">{{todo?.text}}</span>
+  <span class="todo-text">{{todo?.text | capitalize }}</span>
   <!-- <input type="checkbox"   [(ngModel)]="todo.completed"> -->
   <input type="checkbox"
     (change)="handleComplete()"
