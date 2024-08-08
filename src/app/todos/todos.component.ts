@@ -19,6 +19,7 @@ export class TodosComponent implements OnInit {
   addTodoText = '';
   todosList: Todo[] = [];
   apiService: TodosApiRestService;
+  today = new Date();
   constructor( apiService: TodosApiRestService, ) {
     this.apiService = apiService;
   }

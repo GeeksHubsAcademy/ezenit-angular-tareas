@@ -1,3 +1,9 @@
+<section>
+  <h3>{{today | date:'YYYY/MM/dd'}}</h3>
+  <!-- <pre>
+    {{todosList | json}}
+  </pre> -->
+</section>
 <section class="add-todo">
 
   <!-- <form (ngSubmit)="handleSubmitAddTodo()">
@@ -20,8 +26,7 @@
     <button (click)="handleDelete(todo.id)">Delete</button>
   </div> -->
 
-  <app-todos-list
-    [todosList]="todosList"
+  <app-todos-list [todosList]="todosList"
     (complete)="handleComplete($event)"
     (delete)="handleDelete($event)">
   </app-todos-list>

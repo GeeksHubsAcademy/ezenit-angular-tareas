@@ -16,6 +16,8 @@ export class TodosApiRestService {
         .subscribe({
           error: reject,
           next: (_data: unknown) => {
+
+
             const data = _data as { id: number, title: string, completed: boolean }[];
             const todos = data.map(todo => {
               return {
@@ -24,6 +26,7 @@ export class TodosApiRestService {
                 completed: todo.completed
               }
             });
+
             resolve(todos);
           }
         });
