@@ -7,9 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TodosApiRestService {
   BASE_URL = 'https://jsonplaceholder.typicode.com';
-  constructor(private http: HttpClient) {
-
-  }
+  constructor(private http: HttpClient) {  }
 
   getTodos(): Promise<Todo[]> {
 

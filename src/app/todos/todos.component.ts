@@ -4,7 +4,6 @@ import type { Todo } from './todos.types';
 import { CommonModule } from '@angular/common';
 import { AddTodoComponent } from './add-todo/add-todo.component';
 import { TodosListComponent } from "./todos-list/todos-list.component";
-import { HttpClient } from '@angular/common/http';
 import { TodosApiRestService } from './services/todos-api-rest.service';
 
 
@@ -19,8 +18,9 @@ import { TodosApiRestService } from './services/todos-api-rest.service';
 export class TodosComponent implements OnInit {
   addTodoText = '';
   todosList: Todo[] = [];
-
-  constructor(private apiService: TodosApiRestService) {
+  apiService: TodosApiRestService;
+  constructor( apiService: TodosApiRestService, ) {
+    this.apiService = apiService;
   }
 
   async ngOnInit() {
