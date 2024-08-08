@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 
 import type { Todo } from './todos.types';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { AddTodoComponent } from './add-todo/add-todo.component';
 
 
 @Component({
   selector: 'app-todos',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, AddTodoComponent],
   templateUrl: './todos.component.html',
   styleUrl: './todos.component.css'
 })
@@ -31,16 +31,9 @@ export class TodosComponent {
       completed: false
     }
   ]
-  handleSubmitAddTodo() {
-    const text = this.addTodoText.trim();
-    if (!text) return;
+  handleSubmitAddTodo(todoToBeAdded: Todo) {
+    this.todosList.push(todoToBeAdded);
 
-    this.todosList.unshift({
-      id: Date.now(),
-      text: text,
-      completed: false
-    });
-    this.addTodoText = '';
   }
   handleComplete(todo: Todo) {
     todo.completed = !todo.completed;

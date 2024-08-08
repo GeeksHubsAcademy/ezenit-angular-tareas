@@ -1,12 +1,14 @@
 <section class="add-todo">
 
-  <form (ngSubmit)="handleSubmitAddTodo()">
+  <!-- <form (ngSubmit)="handleSubmitAddTodo()">
     <input name="todoText"
       type="text"
       placeholder="add new todo here"
       [(ngModel)]="addTodoText">
     <button type="submit">Add Todo</button>
-  </form>
+  </form> -->
+
+  <app-add-todo (addTodo)="handleSubmitAddTodo($event)"></app-add-todo>
 
   <!-- <span>{{addTodoText}}</span> -->
 </section>
