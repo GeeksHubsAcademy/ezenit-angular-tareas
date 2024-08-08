@@ -3,12 +3,13 @@ import { Component } from '@angular/core';
 import type { Todo } from './todos.types';
 import { CommonModule } from '@angular/common';
 import { AddTodoComponent } from './add-todo/add-todo.component';
+import { TodosListComponent } from "./todos-list/todos-list.component";
 
 
 @Component({
   selector: 'app-todos',
   standalone: true,
-  imports: [CommonModule, AddTodoComponent],
+  imports: [CommonModule, AddTodoComponent, TodosListComponent],
   templateUrl: './todos.component.html',
   styleUrl: './todos.component.css'
 })

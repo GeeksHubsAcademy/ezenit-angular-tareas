@@ -1,0 +1,9 @@
+<div *ngFor="let todo of todosList;"
+  class="todo-item  {{todo.completed ? 'completed' : 'uncompleted'}}">
+  <span class="todo-text">{{todo.text}}</span>
+  <!-- <input type="checkbox"   [(ngModel)]="todo.completed"> -->
+  <input type="checkbox"
+    (change)="handleComplete(todo)"
+    [value]="todo.completed">
+  <button (click)="handleDelete(todo.id)">Delete</button>
+</div>
