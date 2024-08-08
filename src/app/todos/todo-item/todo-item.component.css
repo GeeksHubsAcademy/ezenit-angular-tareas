@@ -1,0 +1,16 @@
+.todo-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1em;
+  margin: 0.5em 0;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.completed {
+  text-decoration: line-through;
+  color: #ccc;
+}

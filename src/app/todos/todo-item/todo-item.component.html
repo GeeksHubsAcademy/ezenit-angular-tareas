@@ -1,0 +1,8 @@
+<div  class="todo-item  {{todo?.completed ? 'completed' : 'uncompleted'}}">
+  <span class="todo-text">{{todo?.text}}</span>
+  <!-- <input type="checkbox"   [(ngModel)]="todo.completed"> -->
+  <input type="checkbox"
+    (change)="handleComplete()"
+    [value]="todo?.completed">
+  <button (click)="handleDelete()">Delete</button>
+</div>
