@@ -1,4 +1,11 @@
-<app-todo-item *ngFor="let todo of todosList"
+<section class="tabs">
+  <button (click)="handleTabChange('all')" class="tab" [class.active]="currentTab === 'all'">All</button>
+  <button (click)="handleTabChange('completed')" class="tab" [class.active]="currentTab === 'completed'">Completed</button>
+  <button (click)="handleTabChange('uncompleted')" class="tab" [class.active]="currentTab === 'uncompleted'">Uncompleted</button>
+</section>
+
+
+<app-todo-item *ngFor="let todo of (todosList | filterTodos:currentTab)"
   [todo]="todo"
   (complete)="handleComplete($event)"
   (delete)="handleDelete($event)">
