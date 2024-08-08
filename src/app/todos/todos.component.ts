@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { AddTodoComponent } from './add-todo/add-todo.component';
 import { TodosListComponent } from "./todos-list/todos-list.component";
 import { HttpClient } from '@angular/common/http';
+import { TodosApiRestService } from './services/todos-api-rest.service';
 
 
 @Component({
@@ -18,30 +19,13 @@ import { HttpClient } from '@angular/common/http';
 export class TodosComponent implements OnInit {
   addTodoText = '';
   todosList: Todo[] = [];
-  httpService: HttpClient;
 
-  constructor(httpService: HttpClient) {
-    this.httpService = httpService;
+  constructor(private apiService: TodosApiRestService) {
   }
 
-  ngOnInit() {
-    this.httpService.get('https://jsonplaceholder.typicode.com/todos')
-    .toPromise()
-      // .subscribe({
-      //   // error: console.error,
-      //   // complete: console.log,
-      //   next: (_data: unknown) => {
-      //     console.log({ _data });
-      //     const data = _data as { id: number, title: string, completed: boolean }[];
-      //       this.todosList = data.map(todo => {
-      //         return {
-      //           id: todo.id,
-      //           text: todo.title,
-      //           completed: todo.completed
-      //         }
-      //       });
-      //   }
-      // });
+  async ngOnInit() {
+    const data = await this.apiService.getTodos()
+    this.todosList = data;
 
   }
   handleSubmitAddTodo(todoToBeAdded: Todo) {
