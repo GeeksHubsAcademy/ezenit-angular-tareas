@@ -9,7 +9,7 @@ import { Todo } from '../todos.types';
   styleUrl: './todo-item.component.css'
 })
 export class TodoItemComponent {
-  @Input() todo?: Todo;;
+  @Input() todo?: Todo;
   @Output() complete = new EventEmitter<Todo>();
   @Output() delete = new EventEmitter<number>();
 
