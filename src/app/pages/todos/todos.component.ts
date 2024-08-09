@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import type { Todo } from './todos.types';
+import type { Todo } from '../../types/todos.types';
 import { CommonModule } from '@angular/common';
 import { AddTodoComponent } from './add-todo/add-todo.component';
 import { TodosListComponent } from "./todos-list/todos-list.component";

@@ -1,1 +1,10 @@
-<p>todo-detail works!</p>
+<article class="todo-item  {{todo?.completed ? 'completed' : 'uncompleted'}}">
+  <h1 class="todo-text">{{todo?.text | capitalize }}</h1>
+  <!-- <input type="checkbox"   [(ngModel)]="todo.completed"> -->
+  <section>
+    <input type="checkbox"
+      (change)="handleComplete()"
+      [value]="todo?.completed">
+    <button (click)="handleDelete()">Delete</button>
+  </section>
+</article>

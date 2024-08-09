@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Todo } from '../todos.types';
+import { Todo } from '../../../types/todos.types';
 import { TodoItemComponent } from '../todo-item/todo-item.component';
 import { Filter } from './filter.types';
 import { FilterTodosPipe } from './filter-todos.pipe';

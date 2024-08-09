@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { Todo } from '../todos.types';
+import { Todo } from '../../../types/todos.types';
 import { FormsModule } from '@angular/forms';
 
 @Component({
