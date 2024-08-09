@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { TodosComponent } from './pages/todos/todos.component';
 import { TodoDetailComponent } from './pages/todo-detail/todo-detail.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { guardWorkingDaysGuard } from './guards/guard-working-days.guard';
+import { GuardWorkingDaysGuard } from './guards/guard-working-days.guard';
 
 
 export const routes: Routes = [
@@ -18,7 +18,7 @@ export const routes: Routes = [
   {
     path: 'todo/:id',
     component: TodoDetailComponent,
-    canActivate: [guardWorkingDaysGuard],
+    canActivate: [GuardWorkingDaysGuard],
     canDeactivate: []
   },
   {
