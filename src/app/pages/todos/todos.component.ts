@@ -4,8 +4,8 @@ import type { Todo } from './todos.types';
 import { CommonModule } from '@angular/common';
 import { AddTodoComponent } from './add-todo/add-todo.component';
 import { TodosListComponent } from "./todos-list/todos-list.component";
-import { TodosApiRestService } from './services/todos-api-rest.service';
-import { TodosPersistanceService } from './services/todos-persistance.service';
+import { TodosApiRestService } from '../../services/todos-api-rest.service';
+import { TodosPersistanceService } from '../../services/todos-persistance.service';
 
 
 @Component({

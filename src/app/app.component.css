@@ -1,0 +1,14 @@
+header {
+  display: flex ;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em;
+  background-color: tomato;
+  color: white;
+}
+
+.active {
+  text-decoration: none;
+  pointer-events: none;
+  color: white;
+}

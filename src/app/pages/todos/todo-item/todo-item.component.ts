@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Todo } from '../todos.types';
-import { CapitalizePipe } from '../../pipes/capitalize.pipe';
+import { CapitalizePipe } from '../../../pipes/capitalize.pipe';
 
 @Component({
   selector: 'app-todo-item',
