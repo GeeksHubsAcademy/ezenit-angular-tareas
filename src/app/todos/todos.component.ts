@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { AddTodoComponent } from './add-todo/add-todo.component';
 import { TodosListComponent } from "./todos-list/todos-list.component";
 import { TodosApiRestService } from './services/todos-api-rest.service';
+import { TodosPersistanceService } from './services/todos-persistance.service';
 
 
 @Component({
@@ -18,27 +19,28 @@ import { TodosApiRestService } from './services/todos-api-rest.service';
 export class TodosComponent implements OnInit {
   addTodoText = '';
   todosList: Todo[] = [];
-  apiService: TodosApiRestService;
   today = new Date();
-  constructor( apiService: TodosApiRestService, ) {
-    this.apiService = apiService;
-  }
+  constructor(  private persistanceService: TodosPersistanceService) {  }
 
   async ngOnInit() {
-    const data = await this.apiService.getTodos()
+    const data = await this.persistanceService.getAll()
     this.todosList = data;
 
   }
   handleSubmitAddTodo(todoToBeAdded: Todo) {
     this.todosList.push(todoToBeAdded);
+    this.persistanceService.addTodo(todoToBeAdded);
 
   }
   handleComplete(todo: Todo) {
     todo.completed = !todo.completed;
+    this.persistanceService.updateTodo(todo);
   }
   handleDelete(id: number) {
     // this.todosList = this.todosList.filter(todo => todo.id !== id);
     const index = this.todosList.findIndex(todo => todo.id === id);
+    const todoToBeDeleted = this.todosList[index];
     this.todosList.splice(index, 1);
+    this.persistanceService.deleteTodo(todoToBeDeleted);
   }
 }
